@@ -1,0 +1,290 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": [
+              "iam:*"
+            ],
+            "Resource": "*"
+        },
+        {
+          "Effect": "Deny",
+          "Action": "*",
+          "Resource": "*",
+          "Condition": {
+            "StringNotEquals": {
+              "aws:RequestedRegion": "us-east-1"
+            }
+          }
+        },
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "application-autoscaling:Describe*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "appmesh:ListMeshes",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "autoscaling:DeleteTags",
+                "autoscaling:Batch*",
+                "autoscaling:Describe*",
+                "autoscaling:ExecutePolicy",
+                "autoscaling:DeletePolicy",
+                "autoscaling:CreateLaunchConfiguration",
+                "autoscaling:AttachInstances",
+                "autoscaling:DeleteLaunchConfiguration",
+                "autoscaling:CreateOrUpdateTags",
+                "autoscaling:PutScalingPolicy",
+                "autoscaling:UpdateAutoScalingGroup",
+                "autoscaling:DeleteAutoScalingGroup",
+                "autoscaling:CreateAutoScalingGroup",
+                "autoscaling:DeleteScheduledAction"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:UpdateStack",
+                "cloudformation:List*",
+                "cloudformation:Describe*"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor4",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:PutMetricAlarm",
+                "cloudwatch:DeleteAlarms",
+                "cloudwatch:Get*",
+                "cloudwatch:Describe*"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor5",
+            "Effect": "Allow",
+            "Action": "compute-optimizer:GetEnrollmentStatus",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor6",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:CreateKeyPair",
+                "ec2:CreateVpc",
+                "ec2:CreateRouteTable",
+                "ec2:RunInstances",
+                "ec2:AttachInternetGateway",
+                "ec2:ModifySubnetAttribute",
+                "ec2:AssociateRouteTable",
+                "ec2:Describe*",
+                "ec2:CreateLaunchTemplate",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:ModifySecurityGroupRules",
+                "ec2:CreateRoute",
+                "ec2-instance-connect:SendSSHPublicKey",
+                "ec2:CreateSecurityGroup",
+                "ec2:CreateInternetGateway",
+                "ec2:DeleteSecurityGroup",
+                "ec2:ModifyVpcAttribute",
+                "ec2:CreateSubnet",
+                "ec2:DeleteKeyPair"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor7",
+            "Effect": "Allow",
+            "Action": [
+                "ecs:UpdateCluster",
+                "ecs:Describe*",
+                "ecs:ExecuteCommand",
+                "ecs:CreateCluster",
+                "ecs:StartTask",
+                "ecs:DeleteService",
+                "ecs:DeleteCluster",
+                "ecs:CreateCapacityProvider",
+                "ecs:RegisterContainerInstance",
+                "ecs:DeleteTaskSet",
+                "ecs:DeregisterTaskDefinition",
+                "ecs:Poll",
+                "ecs:UpdateService",
+                "ecs:CreateService",
+                "ecs:RunTask",
+                "ecs:RegisterTaskDefinition",
+                "ecs:SubmitContainerStateChange",
+                "ecs:StopTask",
+                "ecs:TagResource",
+                "ecs:PutClusterCapacityProviders",
+                "ecs:DeleteCapacityProvider",
+                "ecs:List*",
+                "ecs:UntagResource",
+                "ecs:CreateTaskSet"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor9",
+            "Effect": "Allow",
+            "Action": "elasticloadbalancing:Describe*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor10",
+            "Effect": "Allow",
+            "Action": [
+                "events:List*",
+                "events:Describe*"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor11",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateInstanceProfile",
+                "iam:PassRole",
+                "iam:Get*",
+                "iam:CreateServiceLinkedRole",
+                "iam:List*",
+                "iam:CreateRole",
+                "iam:AttachRolePolicy",
+                "iam:UpdateRole",
+                "iam:PutRolePolicy",
+                "iam:AddRoleToInstanceProfile"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor12",
+            "Effect": "Allow",
+            "Action": "lambda:List*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor13",
+            "Effect": "Allow",
+            "Action": [
+                "logs:Describe*",
+                "logs:FilterLogEvents",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor14",
+            "Effect": "Allow",
+            "Action": [
+                "servicediscovery:Get*",
+                "servicediscovery:List*"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor15",
+            "Effect": "Allow",
+            "Action": "sns:List*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor16",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:GetParametersByPath",
+                "ssm:GetParameters",
+                "ssm:GetParameter"
+            ],
+            "Resource": "arn:aws:ssm:*:*:parameter/aws/service/ecs*"
+        }
+    ]
+}

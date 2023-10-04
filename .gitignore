@@ -1,0 +1,11 @@
+.terraform
+images/
+.idea
+.DS_Store
+*.ppxt
+.terraform.lock.hcl
+terraform.tfstate.backup
+terraform.tfstate
+.terraform.tfstate.lock.info
+
+
